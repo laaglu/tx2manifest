@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var argv = require('argv');
+var main = require('../main');
+
+argv.info('Injects transifex translated manifest.properties into manifest.webapp and writes the result to stdout');
+argv.option([{
+    name: 'rootdir',
+    short: 'd',
+    type: 'string',
+    description: 'Root directory of the webapp (defaults to .)',
+    example: '(example: --rootdir=/home/users/js/myapp)'
+  }, {
+    name: 'slug',
+    short: 's',
+    type: 'string',
+    description: 'Regexp which matches the .tx/config section name corresponding to the manifest_properties resource (defaults to manifest_properties)',
+    example: '(example: --slug=myapp.manifest_properties)'
+  }, {
+    name: 'locale',
+    short: 'l',
+    type: 'string',
+    description: 'Name of the main locale (defaults to en)',
+    example: '(example: --locale=fr)'
+  }, {
+    name: 'help',
+    short: 'h',
+    type: 'string',
+    description: 'Prints this help message'
+  }]);
+
+var args = argv.run();
+var options = args.options;
+if (options.help) {
+  argv.help();
+  return;
+}
+var rootDir = options.rootdir || '.';
+var resourceName = options.slug || 'manifest_properties';
+var mainLocale = options.locale || 'en';
+main(rootDir, resourceName, mainLocale);

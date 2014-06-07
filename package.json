@@ -1,0 +1,42 @@
+{
+  "name": "tx2manifest",
+  "version": "0.1.0",
+  "description": "A tool to inject Mozilla Property files translated using the Transifex service into FirefoxOS app manifests",
+  "homepage": "http://www.vectomatic.org/utils/tx2manifest",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/laaglu/tx2manifest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/laaglu/tx2manifest/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "tx2manifest": "bin/tx2manifest"
+  },
+  "keywords": [
+    "i18n",
+    "property-files",
+    "transifex",
+    "manifest.webapp",
+    "firefox-os",
+    "mozilla",
+    "tool"
+  ],
+  "dependencies": {
+    "argv": "~0.0.2",
+    "request": "~2.34.0",
+    "underscore": "~1.6.0",
+    "rsvp": "~3.0.6",
+    "properties": "~1.2.1",
+    "q-io" : "~1.11.0"
+  },
+  "author": {
+    "name": "Lukas Laag",
+    "email" : "laaglu@fos-apps.org"
+  },
+  "license": "GPL-3.0"
+}
