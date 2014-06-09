@@ -93,7 +93,7 @@ function updateManifest(rootDir, resourceName, mainLocale) {
       data.manifest.locales = trans;
       data.manifest.name = mainTrans.name;
       data.manifest.description = mainTrans.description;
-      console.log(data.manifest);
+      console.log(JSON.stringify(data.manifest, null, " "));
     })
     .then(null, function(err) {
       console.error(err);
